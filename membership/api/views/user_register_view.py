@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 
 from django.db.transaction import atomic
+
 from membership.models import User
 from membership.forms import RegistrationForm
 
