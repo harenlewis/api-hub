@@ -2,7 +2,8 @@ from django.conf.urls import url
 
 from .views import (
     ProjectCreateAPIView,
-    ApiCreateView
+    ApiCreateView,
+    ApiHubView
 )
 
 urlpatterns = [
@@ -10,5 +11,8 @@ urlpatterns = [
         ProjectCreateAPIView.as_view(), name='create-project'),
     
     url(r'^projects/(?P<project_id>\d+)?/?$',
-        ApiCreateView.as_view(), name='create-project'),
+        ApiCreateView.as_view(), name='create-project-api'),
+
+    url(r'^mock/(?P<path>.*)?/?$',
+        ApiHubView.as_view(), name='api-hub'),
 ]
