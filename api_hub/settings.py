@@ -25,7 +25,7 @@ SECRET_KEY = 'ygbbx!&0%qq_+679i0l!4nf!y_1j0h_3j0f1^kjqm*3!pikr(='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 'api_hub.middlewares.subdomain.SubDomainMiddleware'
 ]
 
 REST_FRAMEWORK = {
