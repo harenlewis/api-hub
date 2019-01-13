@@ -38,6 +38,7 @@ def api_hub_view(request, *args, **kwargs):
         error['errorMsg'] = 'Project or API does not exists.'
         return Response(error, status=status.HTTP_400_BAD_REQUEST)
 
+    # check if permission given by admin.
     has_proj_perm = (APIPermissions
                      .objects
                      .filter(user_id=user.id, project_id=project.id)
