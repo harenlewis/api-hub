@@ -2,7 +2,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authtoken.models import Token
 
 from django.db.transaction import atomic
 from django.shortcuts import get_object_or_404
@@ -50,6 +49,8 @@ class ApiCreateView(APIView):
             error['errorMsg'] = 'No permission on this project'
             return Response(error, status=status.HTTP_403_FORBIDDEN)
 
+        path = serializer.validated_data['path']
+        serializer.validated_data['path'] = path.lstrip('/').rstrip('/')
         serializer.validated_data['project'] = project
         serializer.validated_data['created_by'] = request.user
         serializer.save()
