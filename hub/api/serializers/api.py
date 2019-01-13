@@ -22,7 +22,7 @@ class ApiSerializer(serializers.ModelSerializer):
             'modified_at',
         ]
 
-        read_only_fields = ['created_by', 'created_at', 'modified_by',
+        read_only_fields = ['project', 'created_by', 'created_at', 'modified_by',
                             'modified_at', ]
 
     def get_created_by(self, obj):

@@ -39,7 +39,7 @@ class Api(models.Model):
 
     project = models.ForeignKey(Project, related_name='project')
 
-    path = models.URLField(help_text=_('The path for the api'))
+    path = models.CharField(max_length=256, help_text=_('The path for the api'))
 
     method = models.IntegerField(db_index=True, choices=METHOD_TYPES,
                                  help_text=_('Method of the API'))
