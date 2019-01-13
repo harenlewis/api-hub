@@ -103,7 +103,7 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
         "modified_by": "John Doe",
         "modified_at": "2019-01-14T23:08:20"
         ```
-##### Project API's are accessible through project's UUID.
+#### Project API's are accessible through project's UUID.
 **GET | POST | PUT | DELETE**
 
 **`http://<project_uuid>localhost:8000/api/v1/mock/`**
@@ -114,3 +114,8 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 - Request Data:
     - None
 - Response: Returns saved API response from DB.
+
+#### To access ADMIN panel:
+
+Go to `localhost:8000/admin` and login with the superuser credentials created at the beginning.
+
