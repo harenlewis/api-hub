@@ -17,8 +17,17 @@ class UserRegistrationAPIView(APIView):
     def post(self, request, *args, **kwargs):
         """
         Registers a new user.
-        Accepts JSON request data
+        Request Data:
+            - username: string
+            - email: string
+            - password: string
+
+        Response: Return user token for future API calls.
+        {
+            58fb9cf9f2d88ca678aa34407d9d22b761c36bd6
+        }
         """
+        error = {"errorMsg": ""}
         form = RegistrationForm(request.data)
         if form.is_valid():
             email = form.cleaned_data['email']
@@ -31,6 +40,7 @@ class UserRegistrationAPIView(APIView):
                 token = Token.objects.create(user=user)
                 return Response(token.key, status=status.HTTP_201_CREATED)
             else:
-                return Response('user-exists', status=status.HTTP_400_BAD_REQUEST)
+                error['errorMsg'] = "Username already exists."
+                return Response(error, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)
