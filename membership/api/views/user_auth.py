@@ -11,7 +11,7 @@ from membership.models import User
 from membership.forms import RegistrationForm
 
 
-class UserAuthView(ObtainAuthToken):
+class UserAuthAPIView(ObtainAuthToken):
     permission_classes = ()
 
     @atomic

@@ -1,14 +1,14 @@
 from django.conf.urls import url
 
 from .views import (
-    UserRegistrationView,
-    UserAuthView
+    UserRegistrationAPIView,
+    UserAuthAPIView
 )
 
 urlpatterns = [
     url(r'^register?/?$',
-        UserRegistrationView.as_view(), name='register-user'),
+        UserRegistrationAPIView.as_view(), name='register-user'),
     
     url(r'^auth?/?$',
-        UserAuthView.as_view(), name='user-auth'),
+        UserAuthAPIView.as_view(), name='user-auth'),
 ]

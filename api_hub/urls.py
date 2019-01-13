@@ -19,6 +19,10 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    # include api urls from membership app
     url(r'^api/v1/', include('membership.api.urls', namespace='membership-api')),
+
+    # include api urls from hub app
+    url(r'^api/v1/', include('hub.api.urls', namespace='hub-api')),
 
 ]

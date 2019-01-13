@@ -10,7 +10,7 @@ from membership.models import User
 from membership.forms import RegistrationForm
 
 
-class UserRegistrationView(APIView):
+class UserRegistrationAPIView(APIView):
     permission_classes = ()
 
     @atomic
