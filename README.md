@@ -69,15 +69,15 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
     - `name: string`
 
 - Response: Returns project data.
-    - `{`
-        `"id": 78,`
-        `"name": "Dummy Proj"`,
-        `"uuid": "8e767e81-1cb7-40b2-87aa-ad359a43c4e4"`,
-        `"created_by": "John Doe"`,
-        `"created_at": "2019-01-14T23:08:20"`,
-        `"modified_by": "John Doe"`,
-        `"modified_at": "2019-01-14T23:08:20"`,
-        `}`
+    - ```
+        "id": 78,
+        "name": "Dummy Proj",
+        "uuid": "8e767e81-1cb7-40b2-87aa-ad359a43c4e4",
+        "created_by": "John Doe",
+        "created_at": "2019-01-14T23:08:20",
+        "modified_by": "John Doe",
+        "modified_at": "2019-01-14T23:08:20",
+        ```
 
 **POST /api/v1/projects/:project_id**
 
@@ -91,19 +91,18 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
     - `res_body: string`
 
 - Response: Returns project data.
-    - `{`
-            `"id": 78`,
-            `"project": "Dummy Project"`,
-            `"path": "some/path"`,
-            `"method": 100`,
-            `"res_type": 600`,
-            `"res_body": "<p>Hey there</p>"`,
-            `"created_by": "John Doe"`,
-            `"created_at": "2019-01-14T23:08:20"`,
-            `"modified_by": "John Doe"`,
-            `"modified_at": "2019-01-14T23:08:20"`,
-        }
-
+    - ```
+        "id": 78,
+        "project": "Dummy Project",
+        "path": "some/path",
+        "method": 100,
+        "res_type": 600,
+        "res_body": "<p>Hey there</p>",
+        "created_by": "John Doe",
+        "created_at": "2019-01-14T23:08:20",
+        "modified_by": "John Doe",
+        "modified_at": "2019-01-14T23:08:20"
+        ```
 ##### Project API's are accessible through project's UUID.
 **GET | POST | PUT | DELETE**
 
@@ -111,6 +110,7 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 
 - Append API path to above url. For eg taking above data:
     -   `http://8e767e81-1cb7-40b2-87aa-ad359a43c4e4.localhost:8000/api/v1/mock/some/path`       
+
 - Request Data:
     - None
 - Response: Returns saved API response from DB.
