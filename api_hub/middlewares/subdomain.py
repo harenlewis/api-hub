@@ -7,7 +7,9 @@ except ImportError:
 
 
 class SubDomainMiddleware(MiddlewareMixin):
-    
+    """
+    Append subdomain ie. UUID to the request object to identify projects.
+    """
     def process_request(self, request):
         try:
             raw_url = request.get_raw_uri()

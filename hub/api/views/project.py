@@ -16,7 +16,20 @@ class ProjectCreateAPIView(APIView):
     @atomic
     def post(self, request, *args, **kwargs):
         """
-        Creates a project
+        Create a project.
+        Request Data:
+            - name: string
+
+        Response:
+        {
+            "id": 78,
+            "name": "Dummy Proj",
+            "uuid": "8e767e81-1cb7-40b2-87aa-ad359a43c4e4",
+            "created_by": "John Doe",
+            "created_at": "2019-01-14T23:08:20",
+            "modified_by": "John Doe",
+            "modified_at": "2019-01-14T23:08:20",
+        }
         """
         serializer = ProjectSerializer(data=request.data,
                                        context={'request': request}
@@ -28,11 +41,3 @@ class ProjectCreateAPIView(APIView):
         serializer.save()
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    @atomic
-    def delete(self, request, *args, **kwargs):
-        """
-        Check for appropriate permissions and then allow the user to delete
-        project.
-        """
-        pass

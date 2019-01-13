@@ -18,7 +18,26 @@ class ApiCreateView(APIView):
     @atomic
     def post(self, request, *args, **kwargs):
         """
-        Creates api for an project
+        Add an API for an project
+        Request Data:
+            - path: string
+            - method: integer
+            - res_type: integer
+            - res_body: string
+
+        Response:
+        {
+            "id": 78,
+            "project": "Dummy Project",
+            "path": "some/path",
+            "method": 100,
+            "res_type": 600,
+            "res_body": "<p>Hey there</p>",
+            "created_by": "John Doe",
+            "created_at": "2019-01-14T23:08:20",
+            "modified_by": "John Doe",
+            "modified_at": "2019-01-14T23:08:20",
+        }
         """
         user = request.user
         error = {'errorMsg': ''}
