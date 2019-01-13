@@ -55,8 +55,12 @@ class ApiCreateView(APIView):
             error['errorMsg'] = 'Project not found'
             return Response(error, status=status.HTTP_400_BAD_REQUEST)
 
-        project = get_object_or_404(Project, pk=project_id)
-
+        try:
+            project = Project.objects.get(id=project_id)
+        except Project.DoesNotExist:
+            error['errorMsg'] = 'Project does not exists.'
+            return Response(error, status=status.HTTP_400_BAD_REQUEST)
+        
         has_proj_perm = (APIPermissions
                          .objects
                          .filter(user_id=user.id, project_id=project_id)
