@@ -1,1 +1,1 @@
-from .project_view import ProjectCreateAPIView
+from .project import ProjectCreateAPIView
