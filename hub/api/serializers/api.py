@@ -5,13 +5,13 @@ from hub.models import Api
 
 class ApiSerializer(serializers.ModelSerializer):
     created_by = serializers.SerializerMethodField()
-    project = serializers.SerializerMethodField()
+    project_uuid = serializers.SerializerMethodField()
 
     class Meta:
         model = Api
         fields = [
             'id',
-            'project',
+            'project_uuid',
             'path',
             'method',
             'res_type',
@@ -22,11 +22,11 @@ class ApiSerializer(serializers.ModelSerializer):
             'modified_at',
         ]
 
-        read_only_fields = ['project', 'created_by', 'created_at', 'modified_by',
+        read_only_fields = ['created_by', 'created_at', 'modified_by',
                             'modified_at', ]
 
     def get_created_by(self, obj):
         return obj.created_by.username
 
-    def get_project(self, obj):
-        return obj.project.name
+    def get_project_uuid(self, obj):
+        return obj.project.uuid

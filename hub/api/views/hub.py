@@ -61,7 +61,7 @@ def api_hub_view(request, *args, **kwargs):
               )
     if not api_qs.exists():
         error['errorMsg'] = "We were unable to find any matching requests for this method type and the mock path in your projects."
-        return Response(error, status=status.HTTP_403_FORBIDDEN)
+        return Response(error, status=status.HTTP_400_BAD_REQUEST)
 
     api = api_qs[0]
     content_type = RESP_TYPES_DICT.get(api.get_res_type_display(), None)

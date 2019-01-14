@@ -46,8 +46,8 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
     - `email: string`
     - `password: string`
 
-- Response: Return user token for future API calls.
-    - `{ 58fb9cf9f2d88ca678aa34407d9d22b761c36bd6 }`
+- Response: Returns user token for future API calls.
+    - `58fb9cf9f2d88ca678aa34407d9d22b761c36bd6`
 -----
 **POST /api/v1/login**
 - Request Data:
@@ -56,7 +56,7 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 
 
 - Response: Returns user token for future API calls.
-    - `{ 58fb9cf9f2d88ca678aa34407d9d22b761c36bd6 }`
+    - `58fb9cf9f2d88ca678aa34407d9d22b761c36bd6`
 
 **This token is requires for future API calls.**
 
@@ -87,13 +87,20 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 - Request Data:
     - `path: string`
     - `method: integer`
+        - `GET: 100`
+        - `POST: 200`
+        - `PUT: 300`
+        - `DELETE: 400`
     - `res_type: integer`
+        - `JSON: 500`
+        - `HTML: 600`
+        - `TEXT: 700`
     - `res_body: string`
 
 - Response: Returns project data.
     - ```
         "id": 78,
-        "project": "Dummy Project",
+        "project_uuid": "250ae668-db20-4c1e-800a-2253e5869a8b",
         "path": "some/path",
         "method": 100,
         "res_type": 600,

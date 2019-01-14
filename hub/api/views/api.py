@@ -28,7 +28,7 @@ class ApiCreateView(APIView):
         Response:
         {
             "id": 78,
-            "project": "Dummy Project",
+            "project_uuid": "250ae668-db20-4c1e-800a-2253e5869a8b",
             "path": "some/path",
             "method": 100,
             "res_type": 600,
