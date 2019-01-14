@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^projects?/?$',
         ProjectCreateAPIView.as_view(), name='create-project'),
     
-    url(r'^projects/(?P<project_id>\d+)?/?$',
+    url(r'^projects/(?P<project_id>\d+)/hub?/?$',
         ApiCreateView.as_view(), name='create-project-api'),
 
     # url(r'^mock/(?P<path>.*)?/?$',

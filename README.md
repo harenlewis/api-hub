@@ -79,7 +79,7 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
         "modified_at": "2019-01-14T23:08:20",
         ```
 
-**POST /api/v1/projects/:project_id**
+**POST /api/v1/projects/:project_id/hub**
 
 - Header:
     -   `Authorization: Token <token>`
