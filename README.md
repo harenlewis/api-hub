@@ -58,7 +58,7 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 - Response: Returns user token for future API calls.
     - `58fb9cf9f2d88ca678aa34407d9d22b761c36bd6`
 
-**This token is requires for future API calls.**
+**This token is required for future API calls.**
 
 **POST /api/v1/projects**
 
@@ -113,10 +113,10 @@ The API can be tested using [Postman](https://www.getpostman.com/ "Postman").
 #### Project API's are accessible through project's UUID.
 **GET | POST | PUT | DELETE**
 
-**`http://<project_uuid>localhost:8000/api/v1/mock/`**
+**`http://<project_uuid>.localhost:8000/api/v1/mock/`**
 
 - Append API path to above url. For eg taking above data:
-    -   `http://8e767e81-1cb7-40b2-87aa-ad359a43c4e4.localhost:8000/api/v1/mock/some/path`       
+    -   `http://250ae668-db20-4c1e-800a-2253e5869a8b.localhost:8000/api/v1/mock/some/path`       
 
 - Request Data:
     - None
